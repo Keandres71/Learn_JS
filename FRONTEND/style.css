@@ -1,0 +1,26 @@
+h1{
+    color: green    ;
+}
+
+a{
+    color: #5ccb5f;
+}
+
+nav{
+    border: 1px solid;
+    color: black;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+footer{
+    border: 1px solid;
+    color: #5ccb5f;
+    text-align: center;
+}
+
+#div_principal{
+    border: 1px solid black;
+    margin: 2rem;
+    padding: 1rem;
+}

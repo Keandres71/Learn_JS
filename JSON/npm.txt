@@ -1,0 +1,10 @@
+node init = Para crear el 'package.json' = Informacion del proyecto 
+node init --y = con menos comandos
+
+npm install o npm i = para importar una libreria
+
+package-lock.json = se genera cada vez que instalamos una dependecia (Comprueba que todas las dependecncias esten) 
+    nunca se debe modificar este archivo
+
+
+node_modules = Donde se encuentra todo el codigo de las librerias
