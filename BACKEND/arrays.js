@@ -54,11 +54,11 @@ const factura = [
     },
     {
         precio: 1000,
-        cantidad: 4
+        cantidad: 5
     }
 ];
 
-let compra = factura.map(elemento => elemento.precio * elemento.cantidad);
+let compra = factura.map(elemento => elemento.precio * elemento.cantidad).filter(i => i > 4000); //.filter = Para devolver solo los valores deseados
 console.log(compra);
 
 // .reduce (Transforma un array a un solo valor, operaciones dentro de un array)  * (Un map viene junto con un reduce   )
@@ -66,9 +66,14 @@ console.log(compra);
 const totalVenta = compra.reduce((a,b) => a + b);
 console.log(`El total por los tres productos es: ${totalVenta}`);
 
+
+
+
+
+
 let figlet = require('figlet');
 
-figlet('LEO MESSI', function(err, data) {
+figlet('DEVKEANDRES', function(err, data) {
     if (err) {
         console.log('Something went wrong...');
         console.dir(err);
@@ -76,3 +81,4 @@ figlet('LEO MESSI', function(err, data) {
     }
     console.log(data)
 });
+

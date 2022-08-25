@@ -34,7 +34,7 @@ const server = http.createServer((req,res) => {
     res.end('Hello World');
 });
 
-server.listen(3000, "192.168.0.15"); // CON IP DE RED LOCAL ( http://192.168.0.15:3000/ )
+server.listen(3000); // CON IP DE RED LOCAL ( http://192.168.0.15:3000/ )
 console.log("Servidor up");
  
 

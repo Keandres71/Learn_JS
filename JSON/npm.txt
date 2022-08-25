@@ -1,10 +1,26 @@
-node init = Para crear el 'package.json' = Informacion del proyecto 
-node init --y = con menos comandos
+DEPENDENCIES AND DEVDEPENDECIES
 
-npm install o npm i = para importar una libreria
+node init o node init --y = Para crear el 'package.json' = Informacion del proyecto. 
+
+npm install [LIBRERIA] o npm i [LIBRERIA] = para importar una libreria del node_modules.
+
+npm uninstall [LIBRERIA] o npm rm [LIBRERIA] = Eliminar una dependecia (Es global para cualquier dependecia o devdependecies).
 
 package-lock.json = se genera cada vez que instalamos una dependecia (Comprueba que todas las dependecncias esten) 
-    nunca se debe modificar este archivo
+    nunca se debe modificar este archivo.
 
 
-node_modules = Donde se encuentra todo el codigo de las librerias
+npm install o npm i = descargar el node_modules leyendo el package.json
+node_modules = Donde se encuentra todo el codigo de las librerias.
+
+npm i --production = Para solo descargar las dependencias de produccion
+ 
+npx = Atajo para ejecutar dependecias de manera rapida (Busca en el proyecto si existe el comando)
+
+scripts Package.json = Alias para scripts complejos, se ejecutan con 'npm run [ALIAS]'.
+
+DEVDEPENDECIES = dependencias para desarrollo
+
+npm i -D = Para importar libreria
+
+
