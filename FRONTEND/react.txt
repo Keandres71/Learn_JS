@@ -1,0 +1,18 @@
+REACT = Libreria para crear interfaces de usuario
+            Renderiza la pagina con recursos del mismo navegador o de la maquina del usuario
+            aligera la carga del servidor ya que no le hace el request de cambios a este
+
+- JSX = Sintaxis de react = Crear los componentes  
+
+- DOM = Arbol de jerarquia de los tags del HTML 'document'
+    (Es la puerta de acceso a JS para trabajar con los scripts y modificar el DOM).
+
+- Virtual DOM (copia DOM, simplificado con los elementos que se van a utilizar).
+     = Para mejorar el renderizado ( Acumula todos los cambios echos en react y los sube como uno solo al DOM original).
+        Compara muchas veces el Virtual DOM  en busca de modificaciones, busca el minimo numero de operaciones para llegar al mismo resultado 
+        (es mucho mas optimo que hacerlo en el DOM)
+
+- Renderizado (NUCLEO DE REAC) = Comparacion y ejecucion del DOM original = 1. Cambio de estado, 2. Comparacion, 3. Renderizado
+
+- Babel = Transpilador (Dado que los navegadores solo entienden HTML, CSS y JS) -
+    ( De JSX a JS )

@@ -8,10 +8,10 @@
     "dev": "nodemon BACKEND/app.js",
     "start": "node BACKEND/app.js"
   },
-  "author": "",
+  "author": "Kevin Andres Quiroga Castillo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1",
+    "express": "4.18.1",
     "figlet": "^1.5.2"
   },
   "devDependencies": {

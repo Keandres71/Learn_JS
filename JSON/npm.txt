@@ -19,6 +19,10 @@ npx = Atajo para ejecutar dependecias de manera rapida (Busca en el proyecto si 
 
 scripts Package.json = Alias para scripts complejos, se ejecutan con 'npm run [ALIAS]'.
 
+
+Caret (^) = descargar la ultima version de la libreria
+npm i -E [libreria] = descarga la version sin el caret y obliga a descargar siempre la misma version
+
 DEVDEPENDECIES = dependencias para desarrollo
 
 npm i -D = Para importar libreria

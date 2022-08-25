@@ -24,21 +24,24 @@ console.log(compañeros);
 const numbers = ['cero','uno', 'dos', 'tres'];
 
 
-// NO RETORNA NADA, REALIZA UNA ACCION
+// .forEach = NO RETORNA NADA, REALIZA UNA ACCION
 numbers.forEach((elemento,indice,array) => {    
     console.log(elemento, indice * 2);
 })
 /*       */
 
-// map (Retorna valor resultante)
-let numbersTwo = [2,5,7,9]; 
+// .map = (Retorna valor resultante de cada dato del array)
+let numbersTwo = [2,4,6,8]; 
 
 /* numbersTwo = numbersTwo.map(dato => dato * 6);
 console.log(numbersTwo); */
 
 const forSeven = numbersTwo.map(dato => dato * 7);
-console.log(forSeven);
 console.log(numbersTwo);
+console.log(forSeven);
+
+const sumaTotal = forSeven.reduce((a,b) => a + b);
+console.log(`La suma total de los valores seven es: ${sumaTotal}`);
 
 
 /*      */
@@ -58,20 +61,20 @@ const factura = [
     }
 ];
 
-let compra = factura.map(elemento => elemento.precio * elemento.cantidad).filter(i => i > 4000); //.filter = Para devolver solo los valores deseados
+let compra = factura.map(elemento => elemento.precio * elemento.cantidad).filter(i => i > 4000); //.filter = Para devolver solo los valores deseados (condicional)
 console.log(compra);
 
 // .reduce (Transforma un array a un solo valor, operaciones dentro de un array)  * (Un map viene junto con un reduce   )
 // un contador que realiza una operacion sobre cada uno de los valores del array(Tienen que ser valores simples para calcular)
 const totalVenta = compra.reduce((a,b) => a + b);
-console.log(`El total por los tres productos es: ${totalVenta}`);
+console.log(`El total por los productos es: ${totalVenta}`);
 
 
 
 
 
 
-let figlet = require('figlet');
+/* let figlet = require('figlet');
 
 figlet('DEVKEANDRES', function(err, data) {
     if (err) {
@@ -80,5 +83,5 @@ figlet('DEVKEANDRES', function(err, data) {
         return;
     }
     console.log(data)
-});
+}); */
 
