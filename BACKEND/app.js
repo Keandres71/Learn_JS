@@ -129,6 +129,31 @@ console.log(`Mi numero fav es: ${number}`);
 // UTILIZAR SIEMPRE  EL OPERADOR DE COMPARACION ESTRICTO ( === )
 
 
+game_options = ['PIEDRA', 'PAPEL', 'TIJERA'];
+game_rules = {
+    PIEDRA: {
+        TIJERA: true,
+        PAPEL: false
+    },
+    PAPEL: {
+        PIEDRA: true,
+        TIJERA: false 
+    },
+    TIJERA: {
+        PAPEL: true,
+        PIEDRA: false
+    }
+};
+
+const game = (player1, player2) => {
+    if(!game_options.includes(player1) | !game_options.includes(player2)){
+        throw new Error('OPCION NO VALIDA');
+    }
+
+    
+}
+
+
 
 
 

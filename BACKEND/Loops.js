@@ -14,7 +14,7 @@ for(let i = 0; i < cursojs.length; i++){
 
 // ForOf - (No tiene acceso al indice, va siempre progresivo, cuando no se necesit el indice)  
 for(leccion of cursojs){    // cuando nos interesa iterar sobre los elementos del array
-	console.log(leccion);
+	console.log(`ForOf = ${leccion}`);
 }
 
 
@@ -24,8 +24,10 @@ const jugador = {
     club: 'Fc Barcelona'
 }
 for(const y in jugador){
-    console.log(`${y} --> ${jugador[y]}`);
+    console.log(`ForIn = ${y} --> ${jugador[y]}`);
 }
+
+
 
 
 //WHILE 
@@ -33,11 +35,44 @@ for(const y in jugador){
 let contador = 0; //Debe finalizar la sentencia para no acasionar errores
 
 while(contador < 3){
-    console.log(contador)
+    console.log(`WHILE = ${contador}`)
 	contador++;
 }
 
+game_options = ['PIEDRA', 'PAPEL', 'TIJERA'];
+game_rules = {
+    PIEDRA: {
+        TIJERA: true,
+        PAPEL: false
+    },
+    PAPEL: {
+        PIEDRA: true,
+        TIJERA: false 
+    },
+    TIJERA: {
+        PAPEL: true,
+        PIEDRA: false
+    }
+};
 
+const game = (player1, player2) => {
+    if(!game_options.includes(player1) | !game_options.includes(player2)){
+        return 'OPCION NO VALIDA';
+    }
+
+    if(player1 === player2){
+        return '¡EMPATE!'
+    }
+
+    if(game_rules[player1][player2]){ // Utilizando Tupla
+        return 'PLAYER 1 WIN';
+    }else{
+        return 'PLAYER 2 WIN'
+    }
+    
+}
+
+console.log(game('PIEDRA', 'PAPEl'));
 
    
 

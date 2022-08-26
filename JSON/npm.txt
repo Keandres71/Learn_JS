@@ -17,7 +17,7 @@ npm i --production = Para solo descargar las dependencias de produccion
  
 npx = Atajo para ejecutar dependecias de manera rapida (Busca en el proyecto si existe el comando)
 
-scripts Package.json = Alias para scripts complejos, se ejecutan con 'npm run [ALIAS]'.
+* scripts Package.json = Alias para scripts complejos, se ejecutan con 'npm run [ALIAS]'.
 
 
 Caret (^) = descargar la ultima version de la libreria

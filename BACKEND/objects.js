@@ -122,3 +122,44 @@ const suma = (...numeros) => {
 }
 
 suma(60,55,54,12);
+
+
+
+
+// OBJECT (Contiene metodos estaticos)
+
+const pc = {
+    procesador: "Intel i core 10th",
+    ram: "16gb",
+    unidadAlmacenamiento: "SSD 512gb",
+    tarjetaVideo: "Nvidia Geforce GTX 1650"
+}
+//console.log(pc);
+
+const cantidadPc = Object.keys(pc); // Para ver las propiedades de un objeto 
+cantidadPc.forEach((i,index) => console.log(`Parte ${index + 1}: ${i} `));
+console.log(`La cantidad de atributos del pc es: ${cantidadPc.length}`); //( VER CUANTAS PROPIEDADES TIENE)
+console.log(cantidadPc);
+
+
+
+const valoresPc = Object.values(pc);
+valoresPc.forEach((i,index) => console.log(`Componente ${index + 1} = ${i}`))
+console.log(valoresPc);
+
+
+//console.log(Object.entries(pc)); // devuelve un array por cada propiedad del objeto
+Object.entries(pc).forEach((elemento) => { 
+    const key = elemento[0];
+    const value = elemento[1];
+
+    if(typeof value === 'string'){
+        pc[key] = value.toUpperCase();
+    }
+});
+
+//console.log(pc)
+
+const pc2 = {};
+Object.assign(pc2,pc); // Copia a otro objeto hasta el primer nivel de absraccion (objetos primitivos, NO OBJETOS)
+console.log(pc2);

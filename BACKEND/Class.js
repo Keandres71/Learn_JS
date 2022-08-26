@@ -22,7 +22,7 @@ class televisor{
     }
 
     get dimensiones(){
-        console.log('GETTER');
+        //console.log('GETTER');
         return this._dimensiones; // _dimensiones es convencion privada ( _ )
     }
 
@@ -99,6 +99,10 @@ class Alumno extends Usuario{
     agregarCurso(curso){
         return this.cursos.push(curso);
     }
+
+    eliminarCurso(){
+        return this.cursos.pop();
+    }
 }
 
 const Persona1 = new Usuario('Kevin Andres','kevinandres7117@gmail.com', 'loyal123');
@@ -110,4 +114,7 @@ Persona1.bienvenida();
 
 Persona2.agregarCurso('Node Js');
 Persona2.agregarCurso('Mongo DB');
-console.log(Persona2.cursos);
+Persona2.agregarCurso('JS');
+Persona2.eliminarCurso();
+Persona2.activar();
+console.log(Persona2);

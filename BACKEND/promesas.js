@@ -106,10 +106,3 @@ const num3 = () => {
 num2(num3);
 
 
-
-const the100 = () =>{
-     return new Promise(() => {
-          co
-     })
-}
-

@@ -23,7 +23,6 @@ console.log(compañeros);
 
 const numbers = ['cero','uno', 'dos', 'tres'];
 
-
 // .forEach = NO RETORNA NADA, REALIZA UNA ACCION
 numbers.forEach((elemento,indice,array) => {    
     console.log(elemento, indice * 2);
@@ -62,12 +61,12 @@ const factura = [
 ];
 
 let compra = factura.map(elemento => elemento.precio * elemento.cantidad).filter(i => i > 4000); //.filter = Para devolver solo los valores deseados (condicional)
-console.log(compra);
+    console.log(compra);
 
 // .reduce (Transforma un array a un solo valor, operaciones dentro de un array)  * (Un map viene junto con un reduce   )
 // un contador que realiza una operacion sobre cada uno de los valores del array(Tienen que ser valores simples para calcular)
 const totalVenta = compra.reduce((a,b) => a + b);
-console.log(`El total por los productos es: ${totalVenta}`);
+    console.log(`El total por los productos es: ${totalVenta}`);
 
 
 
