@@ -27,7 +27,7 @@ const getDatos = () => {
           }
           setTimeout(() => {
                return resolve(players);
-          }, 3000)
+          }, 10000)
      });
 }
 
@@ -42,6 +42,7 @@ async function getPlayers(){
      }
 }
 
+getPlayers();
  
 /*           */
 
@@ -78,8 +79,8 @@ juro = new Promise((resolve, reject) => {
           }
      }, 5000);
 });
-
 console.log('1. Iniciando proceso');
+
 
 juro.then( respuesta => {
      console.log('3. El resultado es: ' + respuesta); // Cuando obtenga la promesa ejecutar la esta linea del then

@@ -10,7 +10,7 @@ const mascota = {
     dueños:['Evoleth', 'Paola']
 }
 
-console.log(mascota);
+//console.log(mascota);
 console.log('Nombre mascota: '+ mascota.nombre);
 console.log('Dueño Principal: ' + mascota.dueños[1]);
 
@@ -66,7 +66,7 @@ const alimento = {
     number: 7
 }
 
-alimento[Symbol.iterator] = function* (){ // funcion generadora
+alimento[Symbol.iterator] = function* (){ // funcion generadora (Convirtiendo alimento en iterador)
     const values = Object.values(alimento);
     for(const value of values){
         yield value;
@@ -98,7 +98,8 @@ const pdv = {
 const puntoTotal = {
     ...usuario,         // Unificacion de objetos 
     ...pdv,
-    edad: 18    
+    edad: 18,
+    club: 'America de Cali'    
 
 }
 
@@ -136,14 +137,14 @@ const pc = {
 }
 //console.log(pc);
 
-const cantidadPc = Object.keys(pc); // Para ver las propiedades de un objeto 
+const cantidadPc = Object.keys(pc); // Retorna las propiedades de un objeto (ARRAY)
 cantidadPc.forEach((i,index) => console.log(`Parte ${index + 1}: ${i} `));
 console.log(`La cantidad de atributos del pc es: ${cantidadPc.length}`); //( VER CUANTAS PROPIEDADES TIENE)
 console.log(cantidadPc);
 
 
 
-const valoresPc = Object.values(pc);
+const valoresPc = Object.values(pc); // Retorna los valores de un objeto (ARRAY)
 valoresPc.forEach((i,index) => console.log(`Componente ${index + 1} = ${i}`))
 console.log(valoresPc);
 
@@ -158,7 +159,7 @@ Object.entries(pc).forEach((elemento) => {
     }
 });
 
-//console.log(pc)
+//console.log(pc);
 
 const pc2 = {};
 Object.assign(pc2,pc); // Copia a otro objeto hasta el primer nivel de absraccion (objetos primitivos, NO OBJETOS)
