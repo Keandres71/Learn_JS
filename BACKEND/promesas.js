@@ -48,8 +48,8 @@ getPlayers();
 /*           */
 
 //  THEN Y CATCH (En algunos casos suele ser mejor)
-messiBest = true;
-validatorTheBest = new Promise((resolve, reject) => {
+const vmessiBest = true;
+const validatorTheBest = new Promise((resolve, reject) => {
      if(!messiBest === false ){
           return resolve('Messi es el Mejor');
      }else{
@@ -68,8 +68,8 @@ validatorTheBest
 
 /*           */
 
-t = 9;
-juro = new Promise((resolve, reject) => {
+let t = 9;
+const juro = new Promise((resolve, reject) => {
      setTimeout(() => {
           if(t <= 10){
                t = t * 9 + 9;
