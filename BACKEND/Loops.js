@@ -72,8 +72,12 @@ const game = (player1, player2) => {
     
 }
 
-console.log(game('PIEDRA', 'PAPEl'));
+console.log(game('PIEDRA', 'PAPEL'));
 
+const tru = () => {return console.log('Da gusto aprender')}
+tru();
+
+module.exports =  { game, tru };
    
 
 

@@ -1,0 +1,19 @@
+Los modulos de node JS
+
+1. CommonJS (CJS)
+    - Sistema por defecto utilizado por Node.js
+    - file.cjs = Forzar a ejecutar (CJS) como modulo
+        'module' = objeto para manipular commonJS
+            *module.exports =  { functions... }; = Exportar una funcion de otro file
+            *const juegoManos = require("./Loops.js"); = Importando modulo en archivo diferente (TAMBIEN JSON)
+
+
+EN PACKAJE.JSON, seleccionar uno por determinado a nivel local = "type":"module"(ESM) /  "type":"commonjs"(CJS) = viene por defecto
+
+
+2. ECMAScript Modules (ESM)
+    - Sistema oficial de Javascript para la gestion de modulos
+    - file.mjs = Forzar archivos a ejecutar (ESM) como modulo
+        *export { functions ...} || por delante de la funcion  = Para expórtar una funcion (o en un objeto { FUNCTIONS })
+        *export default variable = para clases, funciones unicas o componentes 
+        *import {functions...} from "ruta"  = Para importar lo necesario

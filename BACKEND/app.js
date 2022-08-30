@@ -44,14 +44,7 @@ console.log("Servidor up");
 /* let-> Regional
 const-> No va a cambiar  */
 
-let mensaje='Hola NodeJS';
-console.log(mensaje);
 
-// Funcion normal
-function hunter(cadena){
-    console.log(cadena); 
-}
-hunter('Hunter x Hunter');
 
 
 
@@ -62,32 +55,16 @@ const anonima = function(){ // SIN PARAMETROS
 const fn = anonima();
 
 
-const setSaludo = function(name){
-    return `Hola ${name} bienvenido`;
-};
-
-const getSaludo = function(mensaje){
-    console.log(mensaje)
-};
-
-const saludar = function(set, get){
-    const name1 = set("Robert Lewandowski");
-    get(name1); 
-};
-
-saludar(setSaludo, getSaludo);
-
-
 // FUNCIONES FLECHA
-const sumaC = (z,m) =>{
+const sumaC = (z,m) => {
     return z + m;
 };
-resultadoC = sumaC(5,5);
+const resultadoC = sumaC(5,5);
 console.log(resultadoC);
 
 
 // Funcion flecha (un solo parametro, se elimina los parentesis)
-const one = cadena1 =>{
+const one = cadena1 => {
     console.log(cadena1);
 }
 one('one_piece');
@@ -129,29 +106,6 @@ console.log(`Mi numero fav es: ${number}`);
 // UTILIZAR SIEMPRE  EL OPERADOR DE COMPARACION ESTRICTO ( === )
 
 
-game_options = ['PIEDRA', 'PAPEL', 'TIJERA'];
-game_rules = {
-    PIEDRA: {
-        TIJERA: true,
-        PAPEL: false
-    },
-    PAPEL: {
-        PIEDRA: true,
-        TIJERA: false 
-    },
-    TIJERA: {
-        PAPEL: true,
-        PIEDRA: false
-    }
-};
-
-const game = (player1, player2) => {
-    if(!game_options.includes(player1) | !game_options.includes(player2)){
-        throw new Error('OPCION NO VALIDA');
-    }
-
-    
-}
 
 
 
