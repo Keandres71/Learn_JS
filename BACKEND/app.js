@@ -26,7 +26,7 @@ app.get('/', (req,res) => {
  */
 
 // OTRA MANERA DE LEVANTAR UN SERVIDOR
-const http = require('http');
+/* const http = require('http');
 
 const server = http.createServer((req,res) => {
     res.status = 200;
@@ -35,7 +35,7 @@ const server = http.createServer((req,res) => {
 });
 
 server.listen(3000); // CON IP DE RED LOCAL ( http://192.168.0.15:3000/ )
-console.log("Servidor up");
+console.log("Servidor up"); */
  
 
 
@@ -44,7 +44,16 @@ console.log("Servidor up");
 /* let-> Regional
 const-> No va a cambiar  */
 
+// SERVIDOR CON ECMASCRIPT (libreria 'http' original) -> no recomendada
 
+import { createServer } from 'http';
+const httpServer = createServer((req, res) => {
+    console.log('REQUEST RECIBED');
+
+    res.end('SERVER READY');
+});
+
+httpServer.listen(3000);
 
 
 
@@ -76,12 +85,12 @@ console.log(nombre('Roronroa Zoro'));
 
 
 const multx2 = num0 => num0 * 2;
-jaja = multx2(34);
+const jaja = multx2(34);
 console.log(`AK${jaja}`);
 
  
 const div = (p,o) => p / o; // Con mas parametros
-jeje = div(12,6);
+const jeje = div(12,6);
 console.log(jeje);
 
 

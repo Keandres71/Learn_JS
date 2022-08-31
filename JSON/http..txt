@@ -1,3 +1,14 @@
 MODELO OSI = ESTANDAR DE INTERCONEXION DE SISTEMAS
 
-PROTOCOLO HTTP = MODELO CLIENTE - SERVIDOR
+    (PROTOCOLOS DE COMUNICACION EN RED - INTERNET)
+
+PROTOCOLO HTTP = MODELO CLIENTE - SERVIDOR ( Request - Response )
+    * URL = http://user:pass@desarrolloutil.com:port/profile/video?key=value
+              
+              GET = Obtener.
+              POST = Crear.
+              PUT = Crear pisando.
+              DELETE = Eliminar.
+
+
+PROTOCOLO IP = Para identificar las maquinas(pc's)

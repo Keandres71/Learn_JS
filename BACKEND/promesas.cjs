@@ -1,4 +1,5 @@
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = require('node-fetch-with-proxy');
+
 //             PROMESAS 
 // LAS PROMESAS SIEMPRE RETORNAN ALGO (las promesas son un objeto)
 // resolve = resuelve la promesa, reject = rechaza la promesa
@@ -228,6 +229,6 @@ console.log(medidas);
 
 
      //MODULES [require, module.exports] = CommonJS
-const juegoManos = require("./Loops.js"); 
+/* const juegoManos = require("./Loops.js"); 
 //juegoManos.tru();
-console.log(juegoManos.game('PAPEL', 'PIEDRA'));
+console.log(juegoManos.game('PAPEL', 'PIEDRA')); */
