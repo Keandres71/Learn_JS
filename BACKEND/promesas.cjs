@@ -1,5 +1,8 @@
 const fetch = require('node-fetch-with-proxy');
 
+
+//import fetch from 'node-fetch';
+
 //             PROMESAS 
 // LAS PROMESAS SIEMPRE RETORNAN ALGO (las promesas son un objeto)
 // resolve = resuelve la promesa, reject = rechaza la promesa
