@@ -24,55 +24,24 @@ console.log("Servidor up"); */
 
 import dotenv from 'dotenv'; // Es global
 import express from 'express';
-import { charactersRickMorty } from '../bbdd.js';
+import authRouter from '../routes/auth.js';
+import profileRouter from '../routes/profile.js';    
 dotenv.config(); // Toma por defecto el ( .env )
 
 
-
-const PORT = 3000;
+const PORT = process.env.PORT;
 const expressApp = express();
 
-expressApp.use(express.json()); // Middlewares
-expressApp.use(express.text()); // Middlewares
-
+expressApp.use(express.json()); // Middlewares = Para interpretar json's enviados en http
+expressApp.use(express.text()); // Middlewares = Para interpretar text enviados en http
+expressApp.use('/profile',profileRouter); // Se define path
+expressApp.use('/auth', authRouter);        
 
 expressApp.get('/', (req,res) => { // endpoints  
     res.send('CHARACTERS OF RICK AND MORTY');
-});
 
-expressApp.post('/', (req,res) => {
-    res.send('POST request');
-})
-
-expressApp.all('/secret', (req,res,next) => {
-    console.log('Secret section');
-    next();
-});
-
-
-//OBTENER
-expressApp.get("/profile/:id", (req,res) => {
-    const {id} = req.params; //Recuperando propiedad de (params)
-    const character = charactersRickMorty.find((character) => character.id === id);
-    if(!character) return res.sendStatus(404);
-
-    return res.send(character);
-});
-
-
-//CREAR
-expressApp.post('/profile', ( req, res ) => {
-
-});
-//ACTUALIZAR
-expressApp.patch('/profile', ( req, res ) => {
-
-});
-//ELIMINAR
-expressApp.delete('/profile', ( req, res ) => {
-    
 });
 
 
 expressApp.listen(PORT, () => 
-    console.log(`Server up in the port ${3000}`));
+    console.log(`Server up in the port ${PORT}`));
