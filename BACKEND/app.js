@@ -32,18 +32,29 @@ dotenv.config(); // Toma por defecto el ( .env )
 const PORT = 3000;
 const expressApp = express();
 
-expressApp.use(express.json());
-expressApp.use(express.text());
+expressApp.use(express.json()); // Middlewares
+expressApp.use(express.text()); // Middlewares
 
 
-/* expressApp.get('/', (req,res) => { // endpoints  
-    //res.send('CHARACTERS OF RICK AND MORTY');
-}); */
+expressApp.get('/', (req,res) => { // endpoints  
+    res.send('CHARACTERS OF RICK AND MORTY');
+});
+
+expressApp.post('/', (req,res) => {
+    res.send('POST request');
+})
+
+expressApp.all('/secret', (req,res,next) => {
+    console.log('Secret section');
+    next();
+});
+
+
 //OBTENER
 expressApp.get("/profile/:id", (req,res) => {
-    const { id } = req.body;
+    const {id} = req.params; //Recuperando propiedad de (params)
     const character = charactersRickMorty.find((character) => character.id === id);
-    if(!character) return res.status(404).send();
+    if(!character) return res.sendStatus(404);
 
     return res.send(character);
 });
