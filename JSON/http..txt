@@ -12,3 +12,13 @@ PROTOCOLO HTTP = MODELO CLIENTE - SERVIDOR ( Request - Response )
 
 
 PROTOCOLO IP = Para identificar las maquinas(pc's)
+
+COOKIE = es un metodo de transporte de informacion y almacenamiento
+
+AUTENTICACION = Solicitud a un endpoint llamado 'method=POST/login' 
+    1. Session = si se valida envia un objeto SessionID con informmacion y va guardando la informacion en memoria de los
+                cambios realizados (Solo es un ID)
+                * Header Cookie => SessionID 
+
+    2. Token = se genera Token basado en el ID del usuario y un secreto - (El Token contiene informacion)
+                * body => token

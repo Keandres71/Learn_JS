@@ -24,23 +24,34 @@ console.log("Servidor up"); */
 
 import dotenv from 'dotenv'; // Es global
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import authRouter from '../routes/auth.js';
-import profileRouter from '../routes/profile.js';    
+import profileRouter from '../routes/profile.js'; 
+import authSessionRouter from '../routes/auth_session.js';
+import authTokenRouter from '../routes/auth_token.js';
+
 dotenv.config(); // Toma por defecto el ( .env )
 
 
 const PORT = process.env.PORT;
 const expressApp = express();
 
+expressApp.use(cookieParser()); // Middlewares = Para leer las cookies
 expressApp.use(express.json()); // Middlewares = Para interpretar json's enviados en http
 expressApp.use(express.text()); // Middlewares = Para interpretar text enviados en http
 expressApp.use('/profile',profileRouter); // Se define path
-expressApp.use('/auth', authRouter);        
+expressApp.use('/auth', authRouter);  
+expressApp.use('/auth-token', authTokenRouter);
+expressApp.use('/auth-session', authSessionRouter);      
 
 expressApp.get('/', (req,res) => { // endpoints  
     res.send('CHARACTERS OF RICK AND MORTY');
 
 });
+
+/* expressApp.get('/auth', (req,res) => { // endpoints  
+    res.send('RUTA DE AUTENTIFICACION');
+}); */
 
 
 expressApp.listen(PORT, () => 
