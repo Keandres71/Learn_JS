@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { nanoid } from "nanoid"; // Genera id para desarrollo
+import { charactersRickMorty } from "../bbdd.js";
 import authByEmailPwd  from "../helpers/authByEmailPwd.js";
 
 const authSessionRouter = Router();
@@ -12,10 +13,10 @@ authSessionRouter.post('/login', (req,res) => {
     if(!email || !password) return res.sendStatus(400);
 
     try{
-        authByEmailPwd(email,password);
+        const { id } = authByEmailPwd(email,password);
         const sessionId = nanoid();
-        sessions.push({sessionId}); 
-        res.cookie('SessionsID', sessionId, {
+        sessions.push({sessionId, id}); 
+        res.cookie('sessionId', sessionId, {
             httpOnly: true,
         });
         
@@ -27,8 +28,18 @@ authSessionRouter.post('/login', (req,res) => {
 });
 
 authSessionRouter.get('/profile', (req,res) => {
-    console.log(req.cookies);
-    return res.send();
+    const {cookies} = req;
+    if(!cookies.sessionId) return res.sendStatus(401);
+
+    const userSession = sessions.find((session) => session.sessionId === cookies.sessionId);
+    if(!userSession) return res.sendStatus(401);
+
+    const user = charactersRickMorty.find(user => user.id === userSession.id);
+    if(!user) return res.sendStatus(401);
+
+    delete user.password;
+
+    return res.send(user);
 });
 
 export default authSessionRouter;
