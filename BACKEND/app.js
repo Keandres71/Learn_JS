@@ -22,7 +22,7 @@ server.listen(3000); // CON IP DE RED LOCAL ( http://192.168.0.15:3000/ )
 console.log("Servidor up"); */
 
 
-import dotenv from 'dotenv'; // Es global
+import dotenv from 'dotenv'; // Configuracion .env (Es global)
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import authRouter from '../routes/auth.js';
@@ -48,11 +48,6 @@ expressApp.get('/', (req,res) => { // endpoints
     res.send('CHARACTERS OF RICK AND MORTY');
 
 });
-
-/* expressApp.get('/auth', (req,res) => { // endpoints  
-    res.send('RUTA DE AUTENTIFICACION');
-}); */
-
 
 expressApp.listen(PORT, () => 
     console.log(`Server up in the port ${PORT}`));

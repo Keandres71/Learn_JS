@@ -13,14 +13,15 @@ authSessionRouter.post('/login', (req,res) => {
     if(!email || !password) return res.sendStatus(400);
 
     try{
-        const { id } = authByEmailPwd(email,password);
+        const { id,name } = authByEmailPwd(email,password); //retorna el ID del user 'destucturing de propiedades'
         const sessionId = nanoid();
-        sessions.push({sessionId, id}); 
+        sessions.push({sessionId, id}); // Guardando objeto con informacion del usuario en la Cookie
         res.cookie('sessionId', sessionId, {
             httpOnly: true,
         });
         
-        return res.send();
+        return res.send(`Se ha hecho el login correctamente ${name}. 
+            Cookie: ${sessionId}`);
     }catch(err){
         return res.sendStatus(401);
 
