@@ -21,4 +21,5 @@ AUTENTICACION = Solicitud a un endpoint llamado 'method=POST/login'
                 * Header Cookie => SessionID 
 
     2. Token = se genera Token basado en el ID del usuario y un secreto - (El Token contiene informacion)
-                * body => token
+                * body => token 
+                * JWT = contiene 1. header = 

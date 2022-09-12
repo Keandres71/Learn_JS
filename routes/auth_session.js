@@ -19,7 +19,7 @@ authSessionRouter.post('/login', (req,res) => {
         res.cookie('sessionId', sessionId, {
             httpOnly: true,
         });
-        
+
         return res.send(`Se ha hecho el login correctamente ${name}. 
             Cookie: ${sessionId}`);
     }catch(err){
