@@ -4,6 +4,7 @@ import authByEmailPwd from "../helpers/authByEmailPwd.js";
 const authTokenRouter = Router();
 
 
+// jsonwebtoken = 
 
 authTokenRouter.post('/login', (req,res) => {
     const {email, password} = req.body; 
@@ -18,6 +19,16 @@ authTokenRouter.post('/login', (req,res) => {
         return res.sendStatus(401);
 
     }
+});
+
+authTokenRouter.get('/profile', (req,res) => {
+
+    const user = charactersRickMorty.find(user => user.id === userSession.id);
+    if(!user) return res.sendStatus(401);
+
+    delete user.password;
+
+    return res.send(user);
 });
 
 export default authTokenRouter; 
