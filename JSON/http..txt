@@ -8,7 +8,14 @@ PROTOCOLO HTTP = MODELO CLIENTE - SERVIDOR ( Request - Response )
               GET = Obtener.
               POST = Crear.
               PUT = Crear pisando.
+              PATCH = Editar.
               DELETE = Eliminar.
+
+
+                UN SERVIDOR ES UNA API REST = Usa los metodos http y un cliente los consume 
+
+        Event Loop = bloquea el hilo principal de node y no deja ejecutar nada mas que la tarea que este haciendo
+            Para que no suceda esto se utiliza el asincronismo.
 
 
 PROTOCOLO IP = Para identificar las maquinas(pc's)
