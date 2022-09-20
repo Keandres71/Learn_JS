@@ -13,7 +13,7 @@ authSessionRouter.post('/login', (req,res) => {
     if(!email || !password) return res.sendStatus(400);
 
     try{
-        const { id,name } = authByEmailPwd(email,password); //retorna el ID del user 'destucturing de propiedades'
+        const { id,name } = authByEmailPwd(email,password); // Retorna el ID del user 'destucturing de propiedades'
         const sessionId = nanoid();
         sessions.push({sessionId, id}); // Guardando objeto con informacion del usuario en la Cookie
         res.cookie('sessionId', sessionId, {

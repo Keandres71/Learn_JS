@@ -1,5 +1,5 @@
 const fs = require('fs');
-const filename = process.argv[2];
+const filename = process.argv[3];
 
 
 /* function handleFile(err,file){
@@ -10,10 +10,10 @@ const filename = process.argv[2];
     return console.log(lines);
 } */
 
-fs.readFile(filename, function (err, contents){
-    if(err){
-        return console.log(err);
-    }
-    const comas = contents.toString().split(',').length;
+fs.readFile(filename, function(err, data){
+    if(err) return console.log(err);
+
+    const comas = data.toString().split(',').length;
+    //console.log(data.toString());
     console.log(comas);
 });
