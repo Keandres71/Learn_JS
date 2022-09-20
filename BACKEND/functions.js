@@ -57,3 +57,12 @@ const number = 72;
 console.log(`Mi numero fav es: ${number}`);
 
 // UTILIZAR SIEMPRE  EL OPERADOR DE COMPARACION ESTRICTO ( === )
+
+// TIMERS
+setInterval(() => {
+    console.log(`Funcion que se ejecuta cada cierto time como bucle`);
+}, 5000);
+
+setTimeout(() => {
+    console.log(`Funcion que espera ciero time para ejecutarse`);
+}, 6000);
