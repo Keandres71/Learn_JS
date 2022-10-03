@@ -12,10 +12,10 @@ for(let i = 0; i < cursojs.length; i++){
 }
 
 
-// ForOf - (No tiene acceso al indice, va siempre progresivo, cuando no se necesit el indice)  
-for(leccion of cursojs){    // cuando nos interesa iterar sobre los elementos del array
+// ForOf - (No tiene acceso al indice, va siempre progresivo, cuando no se necesite el indice)  
+ for(let leccion of cursojs){    // cuando nos interesa iterar sobre los elementos del array
 	console.log(`ForOf = ${leccion}`);
-}
+} 
 
 
 //ForIn     (Iterar sobre la clave de un objeto)
@@ -23,8 +23,8 @@ const jugador = {
     nombre: 'messi',
     club: 'Fc Barcelona'
 }
-for(const y in jugador){
-    console.log(`ForIn = ${y} --> ${jugador[y]}`);
+for(const clave in jugador){
+    console.log(`ForIn = ${clave} --> ${jugador[clave]}`);
 }
 
 
@@ -39,8 +39,8 @@ while(contador < 3){
 	contador++;
 }
 
-game_options = ['PIEDRA', 'PAPEL', 'TIJERA'];
-game_rules = {
+const game_options = ['PIEDRA', 'PAPEL', 'TIJERA'];
+const game_rules = {
     PIEDRA: {
         TIJERA: true,
         PAPEL: false
@@ -77,7 +77,7 @@ console.log(game('PIEDRA', 'PAPEL'));
 const tru = () => {return console.log('Da gusto aprender')}
 tru();
 
-module.exports =  { game, tru };
+//module.exports =  { game, tru };
    
 
 

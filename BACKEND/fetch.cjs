@@ -45,7 +45,7 @@ const numeroR =  Math.random();
 const numeroMayorOmenor = (numero) => `El ${numero} es: ${ numero < numeroR  ? `es menor que ${numeroR}` : 
     `es mayor que ${numeroR}`}`;
 
-const a = numeroMayorOmenor(48);
+const a = numeroMayorOmenor(0);
 console.log(a);
 
 

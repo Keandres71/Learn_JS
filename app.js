@@ -9,7 +9,7 @@ objects (Se  comparan por referencia), dos cajas con el mismo valor adentro, no 
 functions
 */
 
-//  MANERA DE LEVANTAR UN SERVIDOR
+//  MANERA DE LEVANTAR UN SERVIDOR CON COMMONJS
     /* const http = require('http');
 
 const server = http.createServer((req,res) => {
@@ -26,12 +26,15 @@ const {pathname: root} = new URL('../routes', import.meta.url)
 import dotenv from 'dotenv'; // Configuracion .env (Es global)
 import express, { urlencoded } from 'express';
 import cookieParser from 'cookie-parser';
+
+
+//ROUTERS
 import authRouter from './routes/auth.js';
 import profileRouter from './routes/profile.js'; 
 import authSessionRouter from './routes/auth_session.js';
 import authTokenRouter from './routes/auth_token.js';
 
-//PARA QUE EL __dirname FUNCIONE
+//PARA QUE EL __dirname FUNCIONE CON ECMASCRIPT MODULE
 import path from 'path';
 import {fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -45,11 +48,14 @@ dotenv.config(); // Toma por defecto el ( .env )
 const PORT = process.env.PORT;
 const expressApp = express(); // Aplicacion
 
+//MIDDLEWARES
 expressApp.use(cookieParser()); // Middlewares = Para leer las cookies
 expressApp.use(express.json()); // Middlewares = Para interpretar json's enviados en http
 expressApp.use(express.text()); // Middlewares = Para interpretar text enviados en http
-expressApp.use(urlencoded({extended:false})); 
+expressApp.use(urlencoded({extended:false}));
 
+
+// URL ROUTERS
 expressApp.use('/profile',profileRouter); // Se define path inicial y Routers
 expressApp.use('/auth', authRouter);  
 expressApp.use('/auth-token', authTokenRouter);
@@ -61,7 +67,7 @@ expressApp.get('/', (req,res) => { // endpoints
     res.json({"name":"jajajjaja"});
 });
 
-expressApp.use((req,res,next) => { // Middleware = Se ejecuta antes de cualquier ruta   
+expressApp.use((req,res,next) => { // Middleware = Se ejecuta antes de cualquier ruta   *next() = Para que siga ejecucion 
     console.log('Middleware todas las rutas pasan por aqui');
     console.log(`Route: ${req.url}. 
     Method: ${req.method}`);
@@ -75,7 +81,7 @@ expressApp.get('/player/:user', (req,res) => {
 });
 
 expressApp.get('/search', (req,res) => { 
-    console.log(req.query);
+    console.log(req.query.best);
     const theBest = req.query.best; // Consultas por via URL
     if(theBest === 'Messi'){
         return res.send(`${theBest} es el mejor jugador del mundo`);

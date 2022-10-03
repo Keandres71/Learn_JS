@@ -75,9 +75,8 @@ alimento[Symbol.iterator] = function* (){ // funcion generadora (Convirtiendo al
     yield alimento.color; // (yield es como si fuese un return) yield = recuerda cada iteracion (Itera donde termino la ultima vez, va una a una)
     yield alimento.number;  */     
 }
-
 for(const caracteristica of alimento){
-    console.log(caracteristica);
+    console.log(`PROPIEDAD ALIMENTO: ${caracteristica}`);
 }
 
 
@@ -96,7 +95,7 @@ const pdv = {
 }
 
 const puntoTotal = {
-    ...usuario,         // Unificacion de objetos 
+    ...usuario,         // ( ... )Unificacion de objetos (como si fuese copiar un objeto)
     ...pdv,
     edad: 18,
     club: 'America de Cali'    
@@ -119,7 +118,7 @@ const suma = (...numeros) => {
     const sumaFinal = numeros.reduce((antes,siguiente) => { //reduce() te será útil para tomar todos los elementos de una lista, aplicar una función a cada uno de ellos y acumular el resultado en un valor de salida.
         return antes + siguiente;
     });
-    console.log(sumaFinal);
+    console.log(`SUMA CON ... Y REDUCE = ${sumaFinal}`);
 }
 
 suma(60,55,54,12);
@@ -135,21 +134,20 @@ const pc = {
     unidadAlmacenamiento: "SSD 512gb",
     tarjetaVideo: "Nvidia Geforce GTX 1650"
 }
-//console.log(pc);
 
-const cantidadPc = Object.keys(pc); // Retorna las propiedades de un objeto (ARRAY)
-cantidadPc.forEach((i,index) => console.log(`Parte ${index + 1}: ${i} `));
+const cantidadPc = Object.keys(pc); // Retorna un [array] las propiedades de un objeto 
+cantidadPc.forEach((propiedad,i) => console.log(`Parte ${i + 1}: ${propiedad} `));
 console.log(`La cantidad de atributos del pc es: ${cantidadPc.length}`); //( VER CUANTAS PROPIEDADES TIENE)
 console.log(cantidadPc);
 
 
 
-const valoresPc = Object.values(pc); // Retorna los valores de un objeto (ARRAY)
-valoresPc.forEach((i,index) => console.log(`Componente ${index + 1} = ${i}`))
+const valoresPc = Object.values(pc); // Retorna [array] con los valores de un objeto 
+valoresPc.forEach((valor,i) => console.log(`Componente ${i + 1} = ${valor}`))
 console.log(valoresPc);
 
 
-//console.log(Object.entries(pc)); // devuelve un array por cada propiedad del objeto
+//console.log(Object.entries(pc)); // Retorna [array] por cada propiedad del objeto
 Object.entries(pc).forEach((elemento) => { 
     const key = elemento[0];
     const value = elemento[1];

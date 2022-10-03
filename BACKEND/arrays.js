@@ -39,7 +39,8 @@ const forSeven = numbersTwo.map(dato => dato * 7);
 console.log(numbersTwo);
 console.log(forSeven);
 
-const sumaTotal = forSeven.reduce((a,b) => a + b);
+
+const sumaTotal = forSeven.reduce((a,b) => a + b); // Toma dos valores realiza sentencia y sigue con el siguiente dato(indice)
 console.log(`La suma total de los valores seven es: ${sumaTotal}`);
 
 
@@ -60,7 +61,7 @@ const factura = [
     }
 ];
 
-let compra = factura.map(elemento => elemento.precio * elemento.cantidad).filter(i => i > 4000); //.filter = Para devolver solo los valores deseados (condicional)
+let compra = factura.map(elemento => elemento.precio * elemento.cantidad).filter(i => i >= 4000); //.filter = Para devolver solo los valores deseados (condicional)
     console.log(compra);
 
 // .reduce (Transforma un array a un solo valor, operaciones dentro de un array)  * (Un map viene junto con un reduce   )

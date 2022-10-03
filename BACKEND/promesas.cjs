@@ -52,7 +52,7 @@ getPlayers();
 /*           */
 
 //  THEN Y CATCH (En algunos casos suele ser mejor)
-const vmessiBest = true;
+const messiBest = true;
 const validatorTheBest = new Promise((resolve, reject) => {
      if(!messiBest === false ){
           return resolve('Messi es el Mejor');
