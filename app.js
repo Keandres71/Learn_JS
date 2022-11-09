@@ -25,7 +25,7 @@ const {pathname: root} = new URL('../routes', import.meta.url)
 
 import dotenv from 'dotenv'; // Configuracion .env (Es global)
 import express, { urlencoded } from 'express';
-import cookieParser from 'cookie-parser';
+import cookieParser from 'cookie-parser'; // Para manipular y leer las cookies = Middleware
 
 
 //ROUTERS
@@ -64,8 +64,19 @@ expressApp.use('/auth-session', authSessionRouter);
 
 
 expressApp.get('/', (req,res) => { // endpoints  
-    res.json({"name":"jajajjaja"});
+    res.json({"Ruta principal":"The root"});
 });
+
+
+expressApp.get('/setCookie', (req, res) => { //Estableciendo una cookie
+    res.cookie('cookie en session', 'valor de la cookie', {
+        maxAge: 5000, // TIEMPO DE EXPIRACION DE LA COOKIE
+        httpOnly: true
+        //expires: new Date("2022-11-11")
+    });
+    res.send('COOKIE');
+});
+
 
 expressApp.use((req,res,next) => { // Middleware = Se ejecuta antes de cualquier ruta   *next() = Para que siga ejecucion 
     console.log('Middleware todas las rutas pasan por aqui');

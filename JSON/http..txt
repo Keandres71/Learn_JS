@@ -20,10 +20,12 @@ PROTOCOLO HTTP = MODELO CLIENTE - SERVIDOR ( Request - Response )
 
 PROTOCOLO IP = Para identificar las maquinas(pc's)
 
-COOKIE = es un metodo de transporte de informacion y almacenamiento
+COOKIE = es un metodo de transporte de informacion y almacenamiento en el navegador
+        es un dato(informacion) que el backend le envia a el frontend y el navegador lo almacena
+        se puede establecer el tiempo de expiracion de una cookie, el dominio de la cookie
 
-AUTENTICACION = Solicitud a un endpoint llamado 'method=POST/login' 
-    1. Session = si se valida envia un objeto SessionID con informmacion y va guardando la informacion en memoria de los
+AUTENTICACION = Solicitud a un endpoint llamado 'method=POST  - /login' 
+    1. Session = si se valida, envia un objeto SessionID con informmacion y va guardando la informacion en memoria de los
                 cambios realizados (Solo es un ID)
                 * Header Cookie => SessionID 
 

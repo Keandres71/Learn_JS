@@ -2,7 +2,7 @@ import { json } from "express";
 
 const movil = {
     marca:"Xiaomi",
-    model:"2019",
+    model:2019,
 
 };
 
