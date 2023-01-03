@@ -91,7 +91,7 @@ expressApp.get('/player/:user', (req,res) => {
     res.send(`Jugador de futbol ${user}`); 
 });
 
-expressApp.get('/search', (req,res) => { 
+expressApp.get('/search', (req,res) => { //http://localhost:3000/search/?best=Messi
     console.log(req.query.best);
     const theBest = req.query.best; // Consultas por via URL
     if(theBest === 'Messi'){

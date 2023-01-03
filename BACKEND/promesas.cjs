@@ -124,7 +124,7 @@ fetch(link)
   .then(json => console.log(json))
  */
 
-  const api = async(link) => {
+  const api = async (link) => {
      const response = await fetch(link); // fetch = Para consumir api externa
      console.log(response); // retorna un objeto 'response' (big file)
      const data = await response.json();

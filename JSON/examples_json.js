@@ -1,6 +1,6 @@
 import { json } from "express";
 
-const movil = {
+const movil = { // OBJETO LITERAL DE JS
     marca:"Xiaomi",
     model:2019,
 
@@ -20,8 +20,8 @@ const user = [
     }
 ];
 
-
-const jsp = `[
+// SIENDO UN STRING
+const jsp = `[ 
     {
         "player":"messi",
         "deport": "soccer"

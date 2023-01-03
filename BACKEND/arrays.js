@@ -48,7 +48,7 @@ console.log(`La suma total de los valores seven es: ${sumaTotal}`);
 
 const factura = [
     {
-        precio: 2000,
+        precio: 1500,
         cantidad: 2
     },
     {

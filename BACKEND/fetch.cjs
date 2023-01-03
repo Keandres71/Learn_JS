@@ -29,21 +29,23 @@ fetch('https://rickandmortyapi.com/api/character/666')
 } `;
 console.log(typeof eyeholeMan); // string
 
-const  eyeholeManjson = JSON.parse(eyeholeMan);
-console.log(typeof eyeholeManjson); //object
 
 const plantillasLiterales = `En caso de querer escapar una comilla o tilde invertida en una plantilla literal,
- se debe poner una barra invertida (\) antes de la comilla o tilde invertida.`;
+se debe poner una barra invertida (\) antes de la comilla o tilde invertida.`;
 
+
+
+const eyeholeManjson = JSON.parse(eyeholeMan);
+console.log(typeof eyeholeManjson); //object
 
 console.log(` INFORMACION DE PERSONAJE 
     Episodio: ${eyeholeManjson.episode[0]}
     Image: ${eyeholeManjson.image}`);
 
 
-const numeroR =  Math.random();
-const numeroMayorOmenor = (numero) => `El ${numero} es: ${ numero < numeroR  ? `es menor que ${numeroR}` : 
-    `es mayor que ${numeroR}`}`;
+const numeroRandom =  Math.random();
+const numeroMayorOmenor = (numero) => `El ${numero} es: ${ numero < numeroRandom  ? `es menor que ${numeroRandom}` : 
+    `es mayor que ${numeroRandom}`}`;
 
 const a = numeroMayorOmenor(0);
 console.log(a);

@@ -10,7 +10,7 @@ export const charactersRickMorty = [
         type:"Genetic experiment",
         gender:"Male",
 
-    },
+    }, 
     {
         id:"8",
         name:"Tony",
@@ -24,7 +24,7 @@ export const charactersRickMorty = [
 
     },
     {
-        id:"563",
+        id:"9",
         name:"The Wizard",
         email:"algo14@gmail.com",
         password: "123456",
